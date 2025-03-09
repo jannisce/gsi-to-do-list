@@ -7,3 +7,5 @@ services:
     volumes:
       - ./src:/app/src
       - ./public:/app/public
+    environment:
+      - VITE_API_URL=https://gsi-interviews.camiapp.net/to-do
