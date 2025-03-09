@@ -3,14 +3,14 @@ import TaskItem from './TaskItem'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 const TaskList = ({ tasks, toggleComplete, handleDelete }) => {
-  const [parent] = useAutoAnimate()
+  const [parent, enableAnimations] = useAutoAnimate()
 
   return (
-    <div className='space-y-4' ref={parent}>
+    <div className='space-y-4'>
       {tasks.length === 0 ? (
         <p className='text-center text-gray-500'>No tasks available</p>
       ) : (
-        <ul>
+        <ul ref={parent}>
           {tasks.map((task) => (
             <TaskItem
               key={task.id}
