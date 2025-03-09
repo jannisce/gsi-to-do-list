@@ -7,7 +7,10 @@ import TodoPage from './pages/TodoPage'
 
 import NotFoundPage from './pages/NotFoundPage'
 
+import { useAuth } from './context/AuthContext'
+
 const App = () => {
+  const { user } = useAuth()
 
   return (
     <Routes>
@@ -15,7 +18,9 @@ const App = () => {
 
       <Route path='/' element={<HomePage />} />
 
+      {user && 
       <Route path='/todo' element={<TodoPage />} />
+      }
 
       <Route path='*' element={<NotFoundPage />} />
     </Routes>
