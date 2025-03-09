@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    container_name: gsi-to-do-list
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
